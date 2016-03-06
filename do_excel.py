@@ -29,7 +29,6 @@ def excel_table_byindex(file_name=None, col_names_index=0, by_index=0):
     data = open_excel(file_name)
     table = data.sheets()[by_index]
     nrows = table.nrows  # 行数
-    # ncols = table.ncols  # 列数
     colnames = table.row_values(col_names_index)  # 获取字典的key
     list = []
     for rownum in xrange(1, nrows):
@@ -46,6 +45,7 @@ def main():
     tables = excel_table_byindex()
     json_list = json.dumps(tables)
     print json_list
+
 
 if __name__ == "__main__":
     main()
